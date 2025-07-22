@@ -1,0 +1,14 @@
+version: "3"
+
+services: 
+  firstservice:
+    image: nginx:alpine
+    depends_on: 
+    - secondservice
+    
+    ports: 
+    - 1234:80
+  secondservice:
+    image: mongo:latest
+    ports: 
+    - 27000:27017
